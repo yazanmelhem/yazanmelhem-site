@@ -1,12 +1,22 @@
-// بناء الموقع: يدمج ملفات المحتوى (content/*.json) مع القالب (src/template.html)
-// وينتج dist/ الجاهز للنشر. بلا أي اعتماديات — يكفي Node.
+// بناء الموقع: يدمج ملفات المحتوى مع القالب وينتج dist/ الجاهز للنشر.
+// بلا أي اعتماديات — يكفي Node.
 import { readFileSync, writeFileSync, mkdirSync, cpSync, existsSync } from "node:fs";
 
-const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), "utf8"));
-const site    = read("./content/site.json");
-const videos  = read("./content/videos.json");
-const writing = read("./content/writing.json");
-const archive = read("./content/archive.json");
+const at = p => new URL(p, import.meta.url);
+
+const read = (p, what) => {
+  try {
+    return JSON.parse(readFileSync(at(p), "utf8"));
+  } catch (err) {
+    if (err.code === "ENOENT") throw new Error(`ملف ${what} غير موجود: ${p} — تأكد أنه مرفوع في جذر المستودع.`);
+    throw new Error(`خطأ في قراءة ${p} (${what}): ${err.message}\nغالبًا فاصلة أو قوس ناقص. تراجَع عن آخر تعديل في GitHub.`);
+  }
+};
+
+const site    = read("./site.json",    "نصوص الصفحة");
+const videos  = read("./videos.json",  "الأعمال المرئية");
+const writing = read("./writing.json", "المواد المكتوبة");
+const archive = read("./archive.json", "الأرشيف");
 
 // تهريب الحروف الخاصة حتى لا يكسر عنوانٌ فيه < أو & بنية الصفحة
 const e = s => String(s ?? "")
@@ -68,17 +78,24 @@ const slots = {
   META, VIDEOS, WRITING, ARCHIVE,
 };
 
-let html = readFileSync(new URL("./src/template.html", import.meta.url), "utf8");
+if (!existsSync(at("./template.html"))) throw new Error("القالب template.html غير موجود في جذر المستودع.");
+let html = readFileSync(at("./template.html"), "utf8");
 html = html.replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => {
   if (!(k in slots)) throw new Error(`خانة غير معرّفة في القالب: ${m}`);
   return slots[k];
 });
 if (/\{\{[A-Z_]+\}\}/.test(html)) throw new Error("بقيت خانات غير مستبدلة في الناتج");
 
-const out = new URL("./dist/", import.meta.url);
+const out = at("./dist/");
 mkdirSync(out, { recursive: true });
 writeFileSync(new URL("./index.html", out), html);
-if (existsSync(new URL("./public/", import.meta.url)))
-  cpSync(new URL("./public/", import.meta.url), out, { recursive: true });
+
+// ملفات تُنسخ كما هي
+for (const f of ["robots.txt", "sitemap.xml", "_headers", "cv.pdf"])
+  if (existsSync(at("./" + f))) cpSync(at("./" + f), new URL("./" + f, out));
+
+// مجلد الوسائط الذي تنشئه لوحة التحرير عند رفع أول ملف
+if (existsSync(at("./media/")))
+  cpSync(at("./media/"), new URL("./media/", out), { recursive: true });
 
 console.log(`✓ dist/index.html — ${videos.length} فيديو، ${writing.length} مادة مكتوبة، ${archive.reduce((a,g)=>a+g.items.length,0)} في الأرشيف`);

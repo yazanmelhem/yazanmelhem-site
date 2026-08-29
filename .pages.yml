@@ -1,11 +1,11 @@
 # إعدادات لوحة التحرير (Pages CMS) — app.pagescms.org
-media: public
+media: media
 
 content:
   - name: videos
     label: أعمال مرئية
     type: file
-    path: content/videos.json
+    path: videos.json
     format: json
     list:
       collapsible:
@@ -44,7 +44,7 @@ content:
   - name: writing
     label: مواد مكتوبة
     type: file
-    path: content/writing.json
+    path: writing.json
     format: json
     list:
       collapsible:
@@ -78,7 +78,7 @@ content:
   - name: archive
     label: الأرشيف الكامل
     type: file
-    path: content/archive.json
+    path: archive.json
     format: json
     list:
       collapsible:
@@ -120,7 +120,7 @@ content:
   - name: site
     label: نصوص الصفحة
     type: file
-    path: content/site.json
+    path: site.json
     format: json
     fields:
       - name: nameAr
