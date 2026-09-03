@@ -1,5 +1,8 @@
 # إعدادات لوحة التحرير (Pages CMS) — app.pagescms.org
-media: media
+media:
+  input: media
+  output: /media
+  categories: [image]
 
 content:
   - name: videos
@@ -40,6 +43,11 @@ content:
         label: المدة
         type: string
         description: "مثال: 5:12"
+      - name: cover
+        label: غلاف مخصّص
+        type: image
+        description: "اختياري. لقطة تختارها من الفيلم تحلّ محلّ الغلاف التلقائي من يوتيوب. صدّرها بعرض 1600 بكسل تقريبًا."
+
 
   - name: writing
     label: مواد مكتوبة
@@ -74,6 +82,10 @@ content:
       - name: y
         label: السنة
         type: number
+      - name: image
+        label: صورة مصغّرة
+        type: image
+        description: "اختياري. تظهر بجانب العنوان."
 
   - name: archive
     label: الأرشيف الكامل
@@ -168,3 +180,41 @@ content:
       - name: year
         label: سنة حقوق النشر
         type: string
+      - name: portrait
+        label: صورة شخصية
+        type: image
+        description: "تظهر بجانب الاسم حين تختار شكل الترويسة «اسم وصورة شخصية». مربّعة يفضّل، 800 بكسل."
+      - name: heroImage
+        label: صورة عريضة
+        type: image
+        description: "تظهر فوق الاسم حين تختار شكل الترويسة «صورة عريضة». عريضة جدًا، 2000 بكسل."
+      - name: design
+        label: التصميم
+        type: object
+        fields:
+          - name: accent
+            label: لون التمييز
+            type: select
+            options:
+              values: [طيني, أزرق ليلي, أخضر زيتوني, نبيذي, رمادي فحمي, برتقالي محروق]
+          - name: theme
+            label: الخلفية
+            type: select
+            options:
+              values: [حسب جهاز الزائر, فاتح, داكن]
+            description: "«حسب جهاز الزائر» تتبع إعداد هاتفه أو حاسوبه."
+          - name: font
+            label: الخط
+            type: select
+            options:
+              values: [IBM Plex Sans Arabic, Noto Kufi Arabic, Cairo, Tajawal]
+          - name: heroStyle
+            label: شكل الترويسة
+            type: select
+            options:
+              values: [اسم فقط, اسم وصورة شخصية, صورة عريضة]
+          - name: cardStyle
+            label: شكل بطاقات الفيديو
+            type: select
+            options:
+              values: [بإطار, بلا إطار]
