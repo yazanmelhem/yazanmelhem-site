@@ -1,0 +1,220 @@
+# إعدادات لوحة التحرير (Pages CMS) — app.pagescms.org
+media:
+  input: media
+  output: /media
+  categories: [image]
+
+content:
+  - name: videos
+    label: أعمال مرئية
+    type: file
+    path: videos.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - name: ar
+        label: العنوان بالعربية
+        type: string
+        required: true
+      - name: en
+        label: العنوان بالإنجليزية
+        type: string
+        required: true
+      - name: id
+        label: رابط يوتيوب أو معرّف الفيديو
+        type: string
+        required: true
+        description: "الصق الرابط كاملًا (https://www.youtube.com/watch?v=...) أو المعرّف وحده. الغلاف يُجلب تلقائيًا."
+      - name: kAr
+        label: النوع بالعربية
+        type: string
+        description: "فيلم وثائقي  أو  فيديو شرح"
+      - name: kEn
+        label: النوع بالإنجليزية
+        type: string
+        description: "Documentary  or  Explainer"
+      - name: y
+        label: السنة
+        type: number
+      - name: d
+        label: المدة
+        type: string
+        description: "مثال: 5:12"
+      - name: cover
+        label: غلاف مخصّص
+        type: image
+        description: "اختياري. لقطة تختارها من الفيلم تحلّ محلّ الغلاف التلقائي من يوتيوب. صدّرها بعرض 1600 بكسل تقريبًا."
+
+
+  - name: writing
+    label: مواد مكتوبة
+    type: file
+    path: writing.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - name: ar
+        label: العنوان بالعربية
+        type: string
+        required: true
+      - name: en
+        label: العنوان بالإنجليزية
+        type: string
+        required: true
+      - name: u
+        label: الرابط
+        type: string
+        required: true
+      - name: kAr
+        label: نوع المادة بالعربية
+        type: string
+        description: "مثال: تقرير بحثي"
+      - name: kEn
+        label: نوع المادة بالإنجليزية
+        type: string
+        description: "example: Research report"
+      - name: y
+        label: السنة
+        type: number
+      - name: image
+        label: صورة مصغّرة
+        type: image
+        description: "اختياري. تظهر بجانب العنوان."
+
+  - name: archive
+    label: الأرشيف الكامل
+    type: file
+    path: archive.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - name: ar
+        label: اسم المجموعة بالعربية
+        type: string
+        required: true
+      - name: en
+        label: اسم المجموعة بالإنجليزية
+        type: string
+        required: true
+      - name: items
+        label: الأعمال
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.ar}"
+        fields:
+          - name: ar
+            label: العنوان بالعربية
+            type: string
+            required: true
+          - name: en
+            label: العنوان بالإنجليزية
+            type: string
+            required: true
+          - name: y
+            label: السنة
+            type: number
+          - name: u
+            label: الرابط
+            type: string
+            required: true
+
+  - name: site
+    label: نصوص الصفحة
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - name: nameAr
+        label: الاسم بالعربية
+        type: string
+      - name: nameEn
+        label: الاسم بالإنجليزية
+        type: string
+      - name: roleAr
+        label: الصفة بالعربية
+        type: string
+      - name: roleEn
+        label: الصفة بالإنجليزية
+        type: string
+      - name: bioAr
+        label: النبذة بالعربية
+        type: text
+      - name: bioEn
+        label: النبذة بالإنجليزية
+        type: text
+      - name: metaAr
+        label: سطر التعريف بالعربية
+        type: string
+        list: true
+      - name: metaEn
+        label: سطر التعريف بالإنجليزية
+        type: string
+        list: true
+        description: "يجب أن يطابق ترتيب السطر العربي وعدده"
+      - name: videoNoteAr
+        label: سطر الدور تحت «أعمال مرئية» بالعربية
+        type: text
+      - name: videoNoteEn
+        label: سطر الدور تحت «أعمال مرئية» بالإنجليزية
+        type: text
+      - name: email
+        label: البريد الإلكتروني
+        type: string
+      - name: authorUrl
+        label: رابط صفحة الكاتب في حبر
+        type: string
+      - name: cvUrl
+        label: رابط السيرة الذاتية
+        type: string
+      - name: year
+        label: سنة حقوق النشر
+        type: string
+      - name: portrait
+        label: صورة شخصية
+        type: image
+        description: "تظهر بجانب الاسم حين تختار شكل الترويسة «اسم وصورة شخصية». مربّعة يفضّل، 800 بكسل."
+      - name: heroImage
+        label: صورة عريضة
+        type: image
+        description: "تظهر فوق الاسم حين تختار شكل الترويسة «صورة عريضة». عريضة جدًا، 2000 بكسل."
+      - name: design
+        label: التصميم
+        type: object
+        fields:
+          - name: accent
+            label: لون التمييز
+            type: select
+            options:
+              values: [طيني, أزرق ليلي, أخضر زيتوني, نبيذي, رمادي فحمي, برتقالي محروق]
+          - name: theme
+            label: الخلفية
+            type: select
+            options:
+              values: [حسب جهاز الزائر, فاتح, داكن]
+            description: "«حسب جهاز الزائر» تتبع إعداد هاتفه أو حاسوبه."
+          - name: font
+            label: الخط
+            type: select
+            options:
+              values: [IBM Plex Sans Arabic, Noto Kufi Arabic, Cairo, Tajawal]
+          - name: heroStyle
+            label: شكل الترويسة
+            type: select
+            options:
+              values: [اسم فقط, اسم وصورة شخصية, صورة عريضة]
+          - name: cardStyle
+            label: شكل بطاقات الفيديو
+            type: select
+            options:
+              values: [بإطار, بلا إطار]
