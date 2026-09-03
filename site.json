@@ -21,13 +21,11 @@
   "authorUrl": "https://www.7iber.com/author/yazan-melhem/",
   "cvUrl": "/media/cv.pdf",
   "year": "2026",
-  "portrait": "",
-  "heroImage": "",
   "design": {
-    "accent": "طيني",
-    "theme": "حسب جهاز الزائر",
-    "font": "IBM Plex Sans Arabic",
-    "heroStyle": "اسم فقط",
+    "accent": "نبيذي",
+    "theme": "داكن",
+    "font": "Cairo",
+    "heroStyle": "اسم وصورة شخصية",
     "cardStyle": "بإطار"
   }
 }
