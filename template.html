@@ -12,20 +12,18 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="theme-color" content="#FBFAF8" media="(prefers-color-scheme:light)">
 <meta name="theme-color" content="#141414" media="(prefers-color-scheme:dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23A8482A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23FBFAF8' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23{{ACCENT_HEX}}'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23FBFAF8' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{{FONT_LINK}}
 <style>
 :root{
   --bg:#FBFAF8; --surface:#FFFFFF; --ink:#17181A; --muted:#6C6A66;
-  --line:#E4E1DB; --accent:#A8482A; --accent-soft:#F2E9E4;
+  --line:#E4E1DB; --accent:{{ACCENT}}; --accent-soft:{{ACCENT_SOFT}};
   --maxw:1080px; --r:4px;
-  --f:"IBM Plex Sans Arabic",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --f:{{FONT_FAMILY}};
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#141414;--surface:#1C1C1D;--ink:#EDEBE7;--muted:#9A9691;--line:#2E2E30;--accent:#E0764F;--accent-soft:#2A211D}
-}
+{{THEME_BLOCK}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-weight:400;
@@ -50,6 +48,27 @@ nav a:hover{color:var(--ink)}
   padding:5px 11px;border-radius:100px;cursor:pointer;transition:.15s}
 .langbtn:hover{border-color:var(--ink);color:var(--ink)}
 @media(max-width:640px){nav .navlink{display:none}}
+
+
+/* ── صور ── */
+.portrait{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid var(--line);background:var(--surface)}
+.hero-split{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.hero-split .hero-text{flex:1 1 380px;min-width:0}
+.banner{width:100%;aspect-ratio:21/9;object-fit:cover;display:block;
+  border-radius:var(--r);margin-bottom:34px;background:var(--surface)}
+.item-thumb{width:78px;aspect-ratio:16/10;object-fit:cover;border-radius:3px;
+  flex:none;background:var(--surface);border:1px solid var(--line)}
+/* بطاقات بلا إطار */
+.grid.bare .card{background:none;border:0;border-radius:0}
+.grid.bare .card:hover{border:0}
+.grid.bare .card-body{padding:14px 2px 0}
+.grid.bare .thumb{border-radius:var(--r)}
+@media (max-width:560px){
+  .portrait{width:96px;height:96px}
+  .hero-split{gap:20px}
+  .item-thumb{display:none}
+}
 
 /* hero */
 .hero{padding:78px 0 56px;border-bottom:1px solid var(--line)}
@@ -137,25 +156,14 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
 
 <main id="top">
 
-<div class="wrap hero">
-  <h1><span class="ar">{{NAME_AR}}</span><span class="en">{{NAME_EN}}</span></h1>
-  <p class="role">
-    <span class="ar">{{ROLE_AR}}</span>
-    <span class="en">{{ROLE_EN}}</span>
-  </p>
-  <p class="bio">
-    <span class="ar">{{BIO_AR}}</span>
-    <span class="en">{{BIO_EN}}</span>
-  </p>
-  <div class="meta-row">{{META}}</div>
-</div>
+{{HERO}}
 
 <section id="video"><div class="wrap">
   <div class="sec-head">
     <h2><span class="ar">أعمال مرئية</span><span class="en">Video Work</span></h2>
     <p class="sec-note"><span class="ar">{{VNOTE_AR}}</span><span class="en">{{VNOTE_EN}}</span></p>
   </div>
-  <div class="grid" id="vgrid">{{VIDEOS}}</div>
+  <div class="grid{{GRID_CLASS}}" id="vgrid">{{VIDEOS}}</div>
 </div></section>
 
 <section id="writing"><div class="wrap">

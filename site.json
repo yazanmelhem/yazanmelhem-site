@@ -7,18 +7,27 @@
   "bioEn": "Journalist and researcher, working since 2018 at 7iber. He produces short documentaries and explainer videos from concept through to final cut, and writes reports and research features on economic and social policy, and on local livelihoods, crafts and music.",
   "metaAr": [
     "عمّان، الأردن",
-    "صحفي في مجلة حبر",
+    "في الصحافة منذ 2018",
     "عربي / إنجليزي"
   ],
   "metaEn": [
     "Amman, Jordan",
-    "Journalist at 7ibr magazine",
+    "In journalism since 2018",
     "Arabic / English"
   ],
-  "videoNoteAr": "يشمل دوري في هذه الأعمال تطوير الفكرة، البحث، المقابلات، إدارة التصوير الميداني، وبناء المعالجة النهائية.\n\n",
-  "videoNoteEn": "On these: idea development, research, interviews, directing the field shoot, and shaping the final cut.",
+  "videoNoteAr": "يشمل دوري في هذه الأعمال تطوير الفكرة، البحث، المقابلات، إدارة التصوير الميداني، وبناء المعالجة النهائية.",
+  "videoNoteEn": "My role on these covers idea development, research, interviews, directing the field shoot, and shaping the final cut.",
   "email": "yazan.melhem@gmail.com",
   "authorUrl": "https://www.7iber.com/author/yazan-melhem/",
   "cvUrl": "/media/cv.pdf",
-  "year": "2026"
+  "year": "2026",
+  "portrait": "",
+  "heroImage": "",
+  "design": {
+    "accent": "طيني",
+    "theme": "حسب جهاز الزائر",
+    "font": "IBM Plex Sans Arabic",
+    "heroStyle": "اسم فقط",
+    "cardStyle": "بإطار"
+  }
 }
