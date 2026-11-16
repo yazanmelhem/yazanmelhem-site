@@ -17,6 +17,7 @@ const site    = read("./site.json",    "نصوص الصفحة");
 const videos  = read("./videos.json",  "الأعمال المرئية");
 const writing = read("./writing.json", "المواد المكتوبة");
 const archive = read("./archive.json", "الأرشيف");
+const services = existsSync(at("./services.json")) ? read("./services.json", "الخدمات") : [];
 
 // تهريب الحروف الخاصة حتى لا يكسر عنوانٌ فيه < أو & بنية الصفحة
 const e = s => String(s ?? "")
@@ -79,6 +80,53 @@ const ARCHIVE = archive.map(g => `
     <span><span class="ar">${e(i.ar)}</span><span class="en">${e(i.en)}</span></span></a>`).join("")}</div>
 </details>`).join("");
 
+// ───────── الخدمات ─────────
+const SERVICES = services.map((s, i) => `
+<article class="svc">
+  <span class="svc-n">${String(i + 1).padStart(2, "0")}</span>
+  <div class="svc-body">
+    <h3><span class="ar">${e(s.ar)}</span><span class="en">${e(s.en)}</span></h3>
+    <p><span class="ar">${e(s.bodyAr)}</span><span class="en">${e(s.bodyEn)}</span></p>
+    ${(s.credits || []).length ? `<ul class="credits">${s.credits.map(c =>
+      `<li><span class="ar">${e(c.ar)}</span><span class="en">${e(c.en)}</span></li>`).join("")}</ul>` : ""}
+  </div>
+</article>`).join("");
+
+// ───────── جهات عمل معها ─────────
+const cAr = site.clientsAr || [], cEn = site.clientsEn || [];
+const CLIENTS = cAr.length ? `
+  <div class="clients">
+    <span class="clabel2"><span class="ar">عمل مع</span><span class="en">Worked with</span></span>
+    <ul>${cAr.map((c, i) => `<li><span class="ar">${e(c)}</span><span class="en">${e(cEn[i] || c)}</span></li>`).join("")}</ul>
+  </div>` : "";
+
+// ───────── مشروع قيد الإنتاج (يظهر فقط حين يُملأ عنوانه) ─────────
+const pr = site.project || {};
+let PROJECT = "";
+if (String(pr.titleAr || "").trim()) {
+  const tid = ytid({ id: pr.trailer });
+  const pimg = img(pr.image);
+  const media = tid
+    ? `<button class="thumb" data-id="${e(tid)}" aria-label="Play trailer">${
+        pimg ? `<img src="${e(pimg)}" alt="" loading="lazy" decoding="async">`
+             : `<img src="https://i.ytimg.com/vi/${e(tid)}/hqdefault.jpg" alt="" loading="lazy" decoding="async">`}${PLAY}</button>`
+    : pimg ? `<div class="thumb"><img src="${e(pimg)}" alt="" loading="lazy" decoding="async"></div>` : "";
+  PROJECT = `
+<section id="project"><div class="wrap">
+  <div class="sec-head">
+    <h2><span class="ar">قيد الإنتاج</span><span class="en">In Production</span></h2>
+  </div>
+  <div class="project">
+    ${media ? `<div class="pmedia">${media}</div>` : ""}
+    <div class="ptext">
+      ${pr.statusAr ? `<span class="tag"><span class="ar">${e(pr.statusAr)}</span><span class="en">${e(pr.statusEn)}</span></span>` : ""}
+      <h3><span class="ar">${e(pr.titleAr)}</span><span class="en">${e(pr.titleEn)}</span></h3>
+      <p><span class="ar">${e(pr.textAr)}</span><span class="en">${e(pr.textEn)}</span></p>
+    </div>
+  </div>
+</div></section>`;
+}
+
 const META = (site.metaAr || []).map((t, i) =>
   `<span><i class="dot"></i><span class="ar">${e(t)}</span><span class="en">${e((site.metaEn || [])[i] || t)}</span></span>`
 ).join("");
@@ -132,7 +180,11 @@ const heroInner = `
     <span class="ar">${e(site.bioAr)}</span>
     <span class="en">${e(site.bioEn)}</span>
   </p>
-  <div class="meta-row">${META}</div>`;
+  <div class="meta-row">${META}</div>
+  <div class="cta-row">
+    <a class="btn" href="#contact"><span class="ar">${e(site.ctaAr || "تواصل معي")}</span><span class="en">${e(site.ctaEn || "Get in touch")}</span></a>
+    <a class="btn ghost" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
+  </div>${CLIENTS}`;
 
 const portrait = img(site.portrait);
 const banner   = img(site.heroImage);
@@ -162,7 +214,9 @@ const slots = {
   CV_URL: e(site.cvUrl), YEAR: e(site.year),
   ACCENT: pal.a, ACCENT_SOFT: pal.s, ACCENT_HEX: pal.a.replace("#", ""),
   FONT_LINK, FONT_FAMILY, THEME_BLOCK, GRID_CLASS, HERO,
-  VIDEOS, WRITING, ARCHIVE,
+  VIDEOS, WRITING, ARCHIVE, SERVICES, PROJECT,
+  CTA_AR: e(site.ctaAr || "تواصل معي"), CTA_EN: e(site.ctaEn || "Get in touch"),
+  CONTACT_AR: e(site.contactAr), CONTACT_EN: e(site.contactEn),
 };
 
 if (!existsSync(at("./template.html"))) throw new Error("القالب template.html غير موجود في جذر المستودع.");
@@ -185,4 +239,4 @@ for (const f of ["robots.txt", "sitemap.xml", "_headers", "cv.pdf"])
 if (existsSync(at("./media/")))
   cpSync(at("./media/"), new URL("./media/", out), { recursive: true });
 
-console.log(`✓ dist/index.html — ${videos.length} فيديو، ${writing.length} مادة مكتوبة، ${archive.reduce((a,g)=>a+g.items.length,0)} في الأرشيف`);
+console.log(`✓ dist/index.html — ${services.length} خدمات، ${videos.length} فيديو، ${writing.length} مادة مكتوبة، ${archive.reduce((a,g)=>a+g.items.length,0)} في الأرشيف`);

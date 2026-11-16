@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>يزن ملحم — صحافي ومنتج أفلام وثائقية</title>
-<meta name="description" content="يزن ملحم — صحافي ومنتج أفلام وثائقية من عمّان. أفلام وثائقية قصيرة وفيديوهات شرح وتقارير بحثية.">
-<meta property="og:title" content="يزن ملحم — صحافي ومنتج أفلام وثائقية">
-<meta property="og:description" content="أفلام وثائقية قصيرة وفيديوهات شرح وتقارير بحثية من الأردن.">
+<title>يزن ملحم — فيكسر ومنتج أفلام وثائقية في الأردن | Yazan Melhem — Fixer & Documentary Producer, Jordan</title>
+<meta name="description" content="Yazan Melhem — Amman-based journalist, fixer and documentary producer. Fixing, documentary producing, and research and writing for podcast, TV and academic projects in Jordan. يزن ملحم — فيكسر ومنتج أفلام وثائقية وباحث في الأردن.">
+<meta property="og:title" content="Yazan Melhem — Fixer & Documentary Producer in Jordan">
+<meta property="og:description" content="Fixing, documentary producing, and research and writing for podcast, TV and academic projects in Jordan.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_JO">
 <meta property="og:locale:alternate" content="en_US">
@@ -71,7 +71,7 @@ nav a:hover{color:var(--ink)}
 }
 
 /* hero */
-.hero{padding:78px 0 56px;border-bottom:1px solid var(--line)}
+.hero{padding-top:78px;padding-bottom:56px;border-bottom:1px solid var(--line)}
 .hero h1{font-size:clamp(38px,7vw,60px);line-height:1.12;font-weight:600;margin:0 0 10px;letter-spacing:-.015em}
 .role{font-size:clamp(17px,2.4vw,21px);color:var(--accent);font-weight:500;margin:0 0 26px}
 .bio{max-width:66ch;font-size:clamp(16px,1.9vw,18.5px);line-height:1.85;color:var(--ink);margin:0}
@@ -136,6 +136,42 @@ details[open] summary::after{content:"–"}
 .cbox .clabel{font-size:13px;color:var(--muted);margin:0 0 5px}
 .cbox a,.cbox p{font-size:16.5px;font-weight:500;margin:0;text-decoration:none;word-break:break-word}
 .cbox a:hover{color:var(--accent)}
+/* CTA */
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;font-size:15.5px;font-weight:600;text-decoration:none;
+  padding:11px 24px;border-radius:100px;background:var(--accent);color:#fff;border:1px solid var(--accent);transition:.15s}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink);filter:none}
+nav .navcta{color:var(--accent);font-weight:600}
+
+/* clients */
+.clients{margin-top:44px;padding-top:22px;border-top:1px solid var(--line)}
+.clabel2{display:block;font-size:12.5px;font-weight:600;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
+.clients ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 30px}
+.clients li{font-size:15.5px;font-weight:500}
+
+/* services */
+.svcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:0 48px}
+.svc{display:flex;gap:20px;padding:28px 0;border-top:1px solid var(--line)}
+.svc-n{flex:none;font-size:13.5px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:4px}
+.svc h3{font-size:20px;font-weight:600;margin:0 0 10px;line-height:1.4}
+.svc p{margin:0;color:var(--ink);font-size:16px;line-height:1.85}
+.credits{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.credits li{font-size:14.5px;color:var(--muted);line-height:1.7;padding-inline-start:14px;position:relative}
+.credits li::before{content:"";position:absolute;inset-inline-start:0;top:.75em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@media(max-width:560px){.svcs{grid-template-columns:1fr}}
+
+/* project */
+.project{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px;align-items:center}
+.project .thumb{border-radius:var(--r);overflow:hidden}
+.ptext h3{font-size:clamp(22px,3vw,28px);font-weight:600;margin:0 0 12px;line-height:1.35}
+.ptext p{margin:0;font-size:16.5px;line-height:1.85}
+@media(max-width:760px){.project{grid-template-columns:1fr;gap:22px}}
+
+/* contact intro */
+.cintro{font-size:clamp(18px,2.4vw,22px);margin:14px 0 0;max-width:40ch}
+
 footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line)}
 </style>
 </head>
@@ -145,10 +181,11 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
   <div class="wrap hbar">
     <a class="brand" href="#top"><span class="ar">{{NAME_AR}}</span><span class="en">{{NAME_EN}}</span></a>
     <nav>
+      <a class="navlink" href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a>
       <a class="navlink" href="#video"><span class="ar">أعمال مرئية</span><span class="en">Video</span></a>
       <a class="navlink" href="#writing"><span class="ar">مواد مكتوبة</span><span class="en">Writing</span></a>
       <a class="navlink" href="#archive"><span class="ar">الأرشيف</span><span class="en">Archive</span></a>
-      <a class="navlink" href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
+      <a class="navcta" href="#contact"><span class="ar">{{CTA_AR}}</span><span class="en">{{CTA_EN}}</span></a>
       <button class="langbtn" id="lang" type="button">EN</button>
     </nav>
   </div>
@@ -157,6 +194,14 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
 <main id="top">
 
 {{HERO}}
+
+<section id="services"><div class="wrap">
+  <div class="sec-head">
+    <h2><span class="ar">الخدمات</span><span class="en">Services</span></h2>
+  </div>
+  <div class="svcs">{{SERVICES}}</div>
+</div></section>
+{{PROJECT}}
 
 <section id="video"><div class="wrap">
   <div class="sec-head">
@@ -183,7 +228,8 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
-  <h2><span class="ar">للتواصل</span><span class="en">Get in touch</span></h2>
+  <h2><span class="ar">{{CTA_AR}}</span><span class="en">{{CTA_EN}}</span></h2>
+  <p class="cintro"><span class="ar">{{CONTACT_AR}}</span><span class="en">{{CONTACT_EN}}</span></p>
   <div class="cgrid">
     <div class="cbox">
       <p class="clabel"><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></p>
@@ -206,8 +252,8 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
 </main>
 
 <script>
-document.getElementById("vgrid").addEventListener("click",e=>{
-  const b=e.target.closest(".thumb"); if(!b) return;
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button.thumb"); if(!b) return;
   const f=document.createElement("iframe");
   f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0`;
   f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";

@@ -5,6 +5,42 @@ media:
   categories: [image]
 
 content:
+  - name: services
+    label: الخدمات
+    type: file
+    path: services.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - name: ar
+        label: اسم الخدمة بالعربية
+        type: string
+        required: true
+      - name: en
+        label: اسم الخدمة بالإنجليزية
+        type: string
+        required: true
+      - name: bodyAr
+        label: الوصف بالعربية
+        type: text
+      - name: bodyEn
+        label: الوصف بالإنجليزية
+        type: text
+      - name: credits
+        label: أعمال تشهد للخدمة
+        type: object
+        list: true
+        fields:
+          - name: ar
+            label: بالعربية
+            type: text
+          - name: en
+            label: بالإنجليزية
+            type: text
+
   - name: videos
     label: أعمال مرئية
     type: file
@@ -162,6 +198,56 @@ content:
         type: string
         list: true
         description: "يجب أن يطابق ترتيب السطر العربي وعدده"
+      - name: ctaAr
+        label: نص زر التواصل بالعربية
+        type: string
+      - name: ctaEn
+        label: نص زر التواصل بالإنجليزية
+        type: string
+      - name: contactAr
+        label: سطر الدعوة في قسم التواصل بالعربية
+        type: text
+      - name: contactEn
+        label: سطر الدعوة في قسم التواصل بالإنجليزية
+        type: text
+      - name: clientsAr
+        label: جهات عملت معها بالعربية
+        type: string
+        list: true
+      - name: clientsEn
+        label: جهات عملت معها بالإنجليزية
+        type: string
+        list: true
+        description: "يجب أن يطابق ترتيب القائمة العربية وعددها"
+      - name: project
+        label: مشروع قيد الإنتاج
+        type: object
+        description: "يظهر القسم فقط حين يُملأ العنوان بالعربية."
+        fields:
+          - name: titleAr
+            label: العنوان بالعربية
+            type: string
+          - name: titleEn
+            label: العنوان بالإنجليزية
+            type: string
+          - name: statusAr
+            label: الحالة بالعربية
+            type: string
+          - name: statusEn
+            label: الحالة بالإنجليزية
+            type: string
+          - name: textAr
+            label: الوصف بالعربية
+            type: text
+          - name: textEn
+            label: الوصف بالإنجليزية
+            type: text
+          - name: trailer
+            label: رابط التريلر على يوتيوب
+            type: string
+          - name: image
+            label: صورة
+            type: image
       - name: videoNoteAr
         label: سطر الدور تحت «أعمال مرئية» بالعربية
         type: text
