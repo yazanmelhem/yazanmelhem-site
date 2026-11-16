@@ -46,8 +46,20 @@ const img = v => {
 
 const PLAY = '<span class="play" aria-hidden="true"></span>';
 
+// معرّف ملف Google Drive إن كان الرابط منه
+const driveId = raw => {
+  const m = String(raw || "").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([A-Za-z0-9_-]{20,})/);
+  return m ? m[1] : "";
+};
+
 // ───────── غلاف فيلم قابل للتشغيل ─────────
 const cover = (v, big) => {
+  const did = driveId(v.id || v.url);
+  if (did) {
+    const c = img(v.cover);
+    const pic = `<img src="${e(c || `https://drive.google.com/thumbnail?id=${did}&sz=w1600`)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">`;
+    return `<button class="cover" type="button" data-src="https://drive.google.com/file/d/${e(did)}/preview" data-title="${e(v.ar)}">${pic}${PLAY}${v.d ? `<span class="dur">${e(v.d)}</span>` : ""}<span class="sr">${bi("تشغيل: " + v.ar, "Play: " + (v.en || v.ar))}</span></button>`;
+  }
   const id = ytid(v.id || v.url);
   const c = img(v.cover);
   const pic = c
@@ -137,7 +149,7 @@ const CLIENTS = cAr.length ? `<div class="clients"><span>${bi("عمل مع", "Wo
 const pr = site.project || {};
 let PROJECT = "";
 if (String(pr.titleAr || "").trim()) {
-  const tid = ytid(pr.trailer);
+  const tid = String(pr.trailer || "").trim() ? (driveId(pr.trailer) ? pr.trailer : ytid(pr.trailer)) : "";
   const pimg = img(pr.image);
   const media = tid ? cover({ id: tid, ar: pr.titleAr, en: pr.titleEn, cover: pr.image }, true)
     : pimg ? `<div class="cover"><img src="${e(pimg)}" alt="" loading="lazy" decoding="async"></div>` : "";

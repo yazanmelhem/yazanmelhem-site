@@ -296,7 +296,7 @@ content:
             label: الوصف بالإنجليزية
             type: text
           - name: trailer
-            label: رابط التريلر على يوتيوب
+            label: رابط التريلر (يوتيوب أو Google Drive)
             type: string
           - name: image
             label: صورة

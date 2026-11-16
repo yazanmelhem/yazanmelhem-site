@@ -309,7 +309,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13.5px;col
 document.addEventListener("click",e=>{
   const b=e.target.closest("button.cover"); if(!b) return;
   const f=document.createElement("iframe");
-  f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0`;
+  f.src=b.dataset.src || `https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0`;
   f.title=b.dataset.title||"YouTube";
   f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
   f.allowFullscreen=true;
