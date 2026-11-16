@@ -58,7 +58,7 @@
   "design": {
     "accent": "نبيذي",
     "theme": "داكن",
-    "font": "Cairo",
+    "font": "IBM Plex Sans Arabic",
     "heroStyle": "اسم وصورة شخصية",
     "cardStyle": "بإطار"
   }
