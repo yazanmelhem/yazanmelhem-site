@@ -285,6 +285,10 @@ content:
           - name: statusEn
             label: الحالة بالإنجليزية
             type: string
+          - {name: creditsAr, label: صنّاع الفيلم بالعربية, type: string}
+          - {name: creditsEn, label: صنّاع الفيلم بالإنجليزية, type: string}
+          - {name: grantAr, label: الدعم أو المنحة بالعربية, type: string}
+          - {name: grantEn, label: الدعم أو المنحة بالإنجليزية, type: string}
           - name: textAr
             label: الوصف بالعربية
             type: text

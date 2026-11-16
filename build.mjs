@@ -144,12 +144,14 @@ if (String(pr.titleAr || "").trim()) {
   PROJECT = `
 <section id="project" class="project"><div class="wrap">
   <h2>${bi("قيد الإنتاج", "In production")}</h2>
-  <div class="feat">
+  <div class="feat${media ? "" : " solo"}">
     ${media}
     <div class="feat-text">
       ${pr.statusAr ? `<p class="kind">${bi(pr.statusAr, pr.statusEn)}</p>` : ""}
       <h4>${bi(pr.titleAr, pr.titleEn)}</h4>
+      ${pr.creditsAr ? `<p class="pcred">${bi(pr.creditsAr, pr.creditsEn)}</p>` : ""}
       <p class="note">${bi(pr.textAr, pr.textEn)}</p>
+      ${pr.grantAr ? `<p class="pgrant">${bi(pr.grantAr, pr.grantEn)}</p>` : ""}
     </div>
   </div>
 </div></section>`;
