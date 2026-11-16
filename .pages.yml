@@ -79,6 +79,13 @@ content:
         label: المدة
         type: string
         description: "مثال: 5:12"
+      - name: noteAr
+        label: سطر وصف بالعربية
+        type: text
+        description: "اختياري. يظهر تحت أول فيلم في القائمة فقط، وهو الفيلم البارز."
+      - name: noteEn
+        label: سطر وصف بالإنجليزية
+        type: text
       - name: cover
         label: غلاف مخصّص
         type: image
@@ -118,10 +125,52 @@ content:
       - name: y
         label: السنة
         type: number
+      - name: srcAr
+        label: الجهة الناشرة بالعربية
+        type: string
+        description: "مثال: حبر"
+      - name: srcEn
+        label: الجهة الناشرة بالإنجليزية
+        type: string
       - name: image
         label: صورة مصغّرة
         type: image
         description: "اختياري. تظهر بجانب العنوان."
+
+  - name: others
+    label: بودكاست وتلفزيون
+    type: file
+    path: others.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - {name: ar, label: العنوان بالعربية, type: string, required: true}
+      - {name: en, label: العنوان بالإنجليزية, type: string}
+      - {name: outAr, label: "الجهة والنوع بالعربية (مثال: صوت · بودكاست)", type: string}
+      - {name: outEn, label: الجهة والنوع بالإنجليزية, type: string}
+      - {name: y, label: السنة أو الفترة, type: string}
+      - {name: bodyAr, label: دوري بالعربية, type: text}
+      - {name: bodyEn, label: دوري بالإنجليزية, type: text}
+      - {name: u, label: الرابط, type: string, description: "اختياري. إن تُرك فارغًا لا يظهر رابط."}
+      - {name: linkAr, label: نص الرابط بالعربية, type: string}
+      - {name: linkEn, label: نص الرابط بالإنجليزية, type: string}
+
+  - name: field
+    label: من الميدان (صور)
+    type: file
+    path: field.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{fields.ar}"
+    fields:
+      - {name: image, label: الصورة, type: image, required: true, description: "الصورة الأولى تظهر كبيرة. عرض 1200–1600 بكسل يكفي."}
+      - {name: ar, label: الوصف بالعربية (المكان والسنة), type: string}
+      - {name: en, label: الوصف بالإنجليزية, type: string}
 
   - name: archive
     label: الأرشيف الكامل
@@ -183,18 +232,18 @@ content:
       - name: roleEn
         label: الصفة بالإنجليزية
         type: string
+      - name: role2Ar
+        label: السطر الثاني من الصفة بالعربية
+        type: string
+      - name: role2En
+        label: السطر الثاني من الصفة بالإنجليزية
+        type: string
       - name: bioAr
         label: النبذة بالعربية
         type: text
       - name: bioEn
         label: النبذة بالإنجليزية
         type: text
-      - name: metaAr
-        label: سطر التعريف بالعربية
-        type: string
-        list: true
-      - name: metaEn
-        label: سطر التعريف بالإنجليزية
         type: string
         list: true
         description: "يجب أن يطابق ترتيب السطر العربي وعدده"
@@ -277,38 +326,23 @@ content:
       - name: portrait
         label: صورة شخصية
         type: image
-        description: "تظهر بجانب الاسم حين تختار شكل الترويسة «اسم وصورة شخصية». مربّعة يفضّل، 800 بكسل."
+        description: "تظهر في قسم التواصل. عمودية يفضّل، 1000 بكسل."
+      - name: heroCaptionAr
+        label: وصف صورة الترويسة بالعربية
+        type: string
+      - name: heroCaptionEn
+        label: وصف صورة الترويسة بالإنجليزية
+        type: string
       - name: heroImage
-        label: صورة عريضة
+        label: صورة الترويسة
         type: image
-        description: "تظهر فوق الاسم حين تختار شكل الترويسة «صورة عريضة». عريضة جدًا، 2000 بكسل."
+        description: "صورة عريضة بملء الشاشة فوق الاسم. عرض 2000 بكسل تقريبًا."
       - name: design
         label: التصميم
         type: object
         fields:
-          - name: accent
-            label: لون التمييز
-            type: select
-            options:
-              values: [طيني, أزرق ليلي, أخضر زيتوني, نبيذي, رمادي فحمي, برتقالي محروق]
-          - name: theme
-            label: الخلفية
-            type: select
-            options:
-              values: [حسب جهاز الزائر, فاتح, داكن]
-            description: "«حسب جهاز الزائر» تتبع إعداد هاتفه أو حاسوبه."
           - name: font
             label: الخط
             type: select
             options:
               values: [IBM Plex Sans Arabic, Noto Kufi Arabic, Cairo, Tajawal]
-          - name: heroStyle
-            label: شكل الترويسة
-            type: select
-            options:
-              values: [اسم فقط, اسم وصورة شخصية, صورة عريضة]
-          - name: cardStyle
-            label: شكل بطاقات الفيديو
-            type: select
-            options:
-              values: [بإطار, بلا إطار]

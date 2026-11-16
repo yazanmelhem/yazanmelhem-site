@@ -1,12 +1,25 @@
 [
   {
+    "id": "trloT-tCJV8",
+    "kAr": "فيلم وثائقي",
+    "kEn": "Documentary",
+    "ar": "من حُسبان إلى العالم: قصة أربعين عامًا من الركض",
+    "en": "From Husban to the World: Forty Years of Running",
+    "y": 2026,
+    "d": "6:20",
+    "noteAr": "العدّاء الأردني سلامة الأقرع، من سباقات المدارس إلى لقب ماراثون الرمال عام 2012، ولا يزال في السادسة والخمسين ينافس على المراكز الأولى.",
+    "noteEn": "Jordanian runner Salameh Al-Aqra, from school races to winning the Marathon des Sables in 2012, still competing for first place at fifty-six."
+  },
+  {
     "id": "qXmoErw9VDA",
     "kAr": "فيديو شرح",
     "kEn": "Explainer",
     "ar": "الحمّة الأردنية: لماذا جفّ نبع عمره آلاف السنين؟",
     "en": "The Jordanian Al-Hamma: Why Did a Thousands-of-Years-Old Spring Dry Up?",
     "y": 2026,
-    "d": "5:12"
+    "d": "5:12",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "DrYuUDQJ4aU",
@@ -15,7 +28,9 @@
     "ar": "الماعز الشامي: طفرة جينية تساوي آلاف الدنانير",
     "en": "The Shami Goat: A Genetic Mutation Worth Thousands",
     "y": 2026,
-    "d": "4:16"
+    "d": "4:16",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "ngr5d6QHqi4",
@@ -24,7 +39,9 @@
     "ar": "المفرق: كيف صارت عاصمة الدراجات الهوائية في الأردن؟",
     "en": "Mafraq: How It Became Jordan's Bicycle Capital",
     "y": 2025,
-    "d": "3:42"
+    "d": "3:42",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "fI4Yf3dNRjM",
@@ -33,7 +50,9 @@
     "ar": "النحّات تغلب عويس: حجر وإزميل ورضا",
     "en": "Taghlib Oweis the Sculptor: Stone, Chisel and Contentment",
     "y": 2025,
-    "d": "7:12"
+    "d": "7:12",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "9_DZFwvfw68",
@@ -42,7 +61,9 @@
     "ar": "ما أهمية العزل الحراري؟ ولماذا يغيب عن منازل الأردنيين؟",
     "en": "Why Thermal Insulation Matters — and Why Jordanian Homes Lack It",
     "y": 2025,
-    "d": "6:32"
+    "d": "6:32",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "QqVYg11M4yI",
@@ -51,7 +72,9 @@
     "ar": "السيارات الكهربائية في الأردن: قصة الإرباك المتكرر",
     "en": "Electric Cars in Jordan: A Story of Repeated Disruption",
     "y": 2024,
-    "d": "6:03"
+    "d": "6:03",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "xtcvIQ-t_ms",
@@ -60,7 +83,9 @@
     "ar": "كيف اختفى النحل البلدي في الأردن؟ وكيف عاد؟",
     "en": "How Jordan's Native Bee Vanished — and Came Back",
     "y": 2024,
-    "d": "4:19"
+    "d": "4:19",
+    "noteAr": "",
+    "noteEn": ""
   },
   {
     "id": "E7VSruiyVAY",
@@ -69,6 +94,8 @@
     "ar": "فرقة رياح الجنوب: رفيق الطريق الصحراوي",
     "en": "South Winds Band: The Desert Road Companion",
     "y": 2023,
-    "d": "4:40"
+    "d": "4:40",
+    "noteAr": "",
+    "noteEn": ""
   }
 ]

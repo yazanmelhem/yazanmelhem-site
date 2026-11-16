@@ -1,20 +1,10 @@
 {
   "nameAr": "يزن ملحم",
   "nameEn": "Yazan Melhem",
-  "roleAr": "منتج ميداني ووثائقي · باحث وكاتب",
-  "roleEn": "Fixer · Documentary Producer · Researcher & Writer",
-  "bioAr": "يزن ملحم صحافي ومنتج مقيم في عمّان، يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
-  "bioEn": "Yazan Melhem is a journalist and producer based in Amman, working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a fixer, documentary producer, and researcher-writer for podcast, television and academic projects.",
-  "metaAr": [
-    "عمّان، الأردن",
-    "في الصحافة منذ 2018",
-    "عربي / إنجليزي"
-  ],
-  "metaEn": [
-    "Amman, Jordan",
-    "In journalism since 2018",
-    "Arabic / English"
-  ],
+  "roleAr": "منتج ميداني ووثائقي",
+  "roleEn": "Fixer & documentary producer",
+  "bioAr": "صحافي ومنتج يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
+  "bioEn": "A journalist and producer working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a fixer and documentary producer, and as a researcher-writer for podcast, television and academic projects.",
   "ctaAr": "تواصل معي",
   "ctaEn": "Get in touch",
   "clientsAr": [
@@ -35,8 +25,8 @@
   ],
   "contactAr": "تعمل على مشروع في الأردن؟ راسلني وأخبرني عنه.",
   "contactEn": "Working on a project in Jordan? Write to me and tell me about it.",
-  "videoNoteAr": "يشمل دوري في هذه الأعمال تطوير الفكرة، البحث، المقابلات، إدارة التصوير الميداني، وبناء المعالجة النهائية.",
-  "videoNoteEn": "My role on these covers idea development, research, interviews, directing the field shoot, and shaping the final cut.",
+  "videoNoteAr": "من إعدادي: الفكرة والبحث والمقابلات وإدارة التصوير وبناء المعالجة.",
+  "videoNoteEn": "Produced by me: idea, research, interviews, directing the shoot and shaping the cut.",
   "project": {
     "titleAr": "",
     "titleEn": "",
@@ -53,13 +43,13 @@
   "whatsapp": "",
   "cvUrl": "/media/cv-yazan-melhem.pdf",
   "year": "2026",
-  "portrait": "",
-  "heroImage": "",
+  "portrait": "/media/portrait.jpg",
+  "heroImage": "/media/hero-camel-herder.jpg",
   "design": {
-    "accent": "نبيذي",
-    "theme": "داكن",
-    "font": "IBM Plex Sans Arabic",
-    "heroStyle": "اسم وصورة شخصية",
-    "cardStyle": "بإطار"
-  }
+    "font": "IBM Plex Sans Arabic"
+  },
+  "role2Ar": "باحث وكاتب، من عمّان",
+  "role2En": "Researcher & writer, based in Amman",
+  "heroCaptionAr": "من فيلم «رعي الإبل في البادية»، حبر، 2022",
+  "heroCaptionEn": "From \"Camel Herding in the Badia\", 7iber, 2022"
 }
