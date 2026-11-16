@@ -8,6 +8,12 @@
 <meta property="og:title" content="Yazan Melhem — Fixer & Documentary Producer in Jordan">
 <meta property="og:description" content="Fixing, documentary producing, and research and writing for podcast, TV and academic projects in Jordan.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://yazanmelhem.com/">
+<meta property="og:image" content="https://yazanmelhem.com{{OG_IMAGE}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yazanmelhem.com/">
 <meta property="og:locale" content="ar_JO">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="theme-color" content="#FBFAF8" media="(prefers-color-scheme:light)">
@@ -172,6 +178,35 @@ nav .navcta{color:var(--accent);font-weight:600}
 /* contact intro */
 .cintro{font-size:clamp(18px,2.4vw,22px);margin:14px 0 0;max-width:40ch}
 
+/* featured film + filter */
+.vfilter{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 26px}
+.vfilter button{font-family:var(--f);font-size:14px;font-weight:500;color:var(--muted);background:none;
+  border:1px solid var(--line);border-radius:100px;padding:6px 15px;cursor:pointer;transition:.15s}
+.vfilter button i{font-style:normal;opacity:.6;font-size:12.5px;margin-inline-start:4px}
+.vfilter button:hover{color:var(--ink);border-color:var(--muted)}
+.vfilter button[aria-pressed="true"]{color:var(--bg);background:var(--ink);border-color:var(--ink)}
+.card.hide,#vgrid:not(.all) .card.extra{display:none}
+.vmore{display:flex;justify-content:center;margin-top:30px}
+.vmore button{font-family:var(--f);cursor:pointer}
+.card.featured .tag{align-self:flex-start}
+@media(min-width:900px){
+  .grid .card.featured{grid-column:1/-1;flex-direction:row}
+  .grid .card.featured .thumb{flex:0 0 64%;width:64%}
+  .grid .card.featured .card-body{display:flex;flex-direction:column;justify-content:center;padding:32px 36px}
+  .grid .card.featured h3{font-size:clamp(22px,2.4vw,28px);line-height:1.35;margin-bottom:12px}
+  .grid.bare .card.featured .card-body{padding:0 32px}
+}
+
+/* contact */
+.cmail{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px}
+.cmail a.big{font-size:clamp(20px,3.4vw,30px);font-weight:600;text-decoration:none;
+  border-bottom:2px solid var(--accent);padding-bottom:2px;word-break:break-all}
+.cmail a.big:hover{color:var(--accent)}
+.copybtn{font-family:var(--f);font-size:13px;font-weight:600;color:var(--muted);background:none;
+  border:1px solid var(--line);border-radius:100px;padding:5px 13px;cursor:pointer}
+.copybtn:hover{color:var(--ink);border-color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
 footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line)}
 </style>
 </head>
@@ -208,7 +243,9 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
     <h2><span class="ar">أعمال مرئية</span><span class="en">Video Work</span></h2>
     <p class="sec-note"><span class="ar">{{VNOTE_AR}}</span><span class="en">{{VNOTE_EN}}</span></p>
   </div>
+  {{VFILTER}}
   <div class="grid{{GRID_CLASS}}" id="vgrid">{{VIDEOS}}</div>
+  {{VMORE}}
 </div></section>
 
 <section id="writing"><div class="wrap">
@@ -230,11 +267,12 @@ footer{padding:26px 0 44px;font-size:13.5px;color:var(--muted);border-top:1px so
 <section class="contact" id="contact"><div class="wrap">
   <h2><span class="ar">{{CTA_AR}}</span><span class="en">{{CTA_EN}}</span></h2>
   <p class="cintro"><span class="ar">{{CONTACT_AR}}</span><span class="en">{{CONTACT_EN}}</span></p>
+  <div class="cmail">
+    <a class="big" href="mailto:{{EMAIL}}" dir="ltr">{{EMAIL}}</a>
+    <button class="copybtn" type="button" data-copy="{{EMAIL}}"><span class="ar">نسخ</span><span class="en">Copy</span></button>
+  </div>
   <div class="cgrid">
-    <div class="cbox">
-      <p class="clabel"><span class="ar">البريد الإلكتروني</span><span class="en">Email</span></p>
-      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
-    </div>
+    {{LINKS}}
     <div class="cbox">
       <p class="clabel"><span class="ar">صفحة الكاتب</span><span class="en">Author page</span></p>
       <a href="{{AUTHOR_URL}}" target="_blank" rel="noopener">7iber.com</a>
@@ -262,6 +300,25 @@ document.addEventListener("click",e=>{
   b.parentNode.insertBefore(w,b); b.remove();
 });
 
+// تصفية الأفلام
+document.querySelectorAll(".vfilter button").forEach(b=>b.addEventListener("click",()=>{
+  const f=b.dataset.f;
+  document.querySelectorAll(".vfilter button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  document.querySelectorAll("#vgrid .card").forEach(c=>c.classList.toggle("hide",f!=="all"&&c.dataset.kind!==f));
+  if(f!=="all") showAllVideos();
+  
+}));
+function showAllVideos(){ document.getElementById("vgrid").classList.add("all"); const m=document.querySelector(".vmore"); if(m) m.remove(); }
+const vm=document.getElementById("vmore"); if(vm) vm.addEventListener("click",showAllVideos);
+// نسخ البريد
+document.querySelectorAll(".copybtn").forEach(b=>b.addEventListener("click",async()=>{
+  try{ await navigator.clipboard.writeText(b.dataset.copy);
+    const ar=b.querySelector(".ar"),en=b.querySelector(".en");
+    ar.textContent="نُسخ ✓"; en.textContent="Copied ✓";
+    setTimeout(()=>{ar.textContent="نسخ";en.textContent="Copy";},1800);
+  }catch(e){ location.href="mailto:"+b.dataset.copy; }
+}));
+
 const btn=document.getElementById("lang");
 function setLang(l){
   const H=document.documentElement;
@@ -277,7 +334,8 @@ btn.addEventListener("click",()=>setLang(document.documentElement.dataset.lang==
   const q=new URLSearchParams(location.search).get("lang");
   if(q==="ar"||q==="en") l=q;
   if(!l){ try{ const v=localStorage.getItem("lang"); if(v==="ar"||v==="en") l=v; }catch(e){} }
-  if(!l) l="ar";                 // الافتراضي: العربية لكل زائر جديد
+  // زائر جديد: العربية إن كانت لغة متصفحه عربية، وإلا الإنجليزية
+  if(!l){ const n=(navigator.languages&&navigator.languages[0])||navigator.language||"ar"; l=/^ar\b/i.test(n)?"ar":"en"; }
   if(l!=="ar") setLang(l);
 })();
 </script>

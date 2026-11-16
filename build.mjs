@@ -40,7 +40,8 @@ const img = v => {
 
 const PLAY = '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
 
-const VIDEOS = videos.map(v => {
+const kindOf = v => /شرح|explain/i.test(`${v.kAr} ${v.kEn}`) ? "explainer" : "doc";
+const VIDEOS = videos.map((v, idx) => {
   const id = ytid(v);
   const cover = img(v.cover);
   const pic = cover
@@ -48,7 +49,7 @@ const VIDEOS = videos.map(v => {
     : `<img src="https://i.ytimg.com/vi/${e(id)}/maxresdefault.jpg" alt="" loading="lazy" decoding="async"
       onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${e(id)}/hqdefault.jpg'">`;
   return `
-<article class="card">
+<article class="card${idx === 0 ? " featured" : ""}${idx > 6 ? " extra" : ""}" data-kind="${kindOf(v)}">
   <button class="thumb" data-id="${e(id)}" aria-label="Play">${pic}${PLAY}</button>
   <div class="card-body">
     <span class="tag"><span class="ar">${e(v.kAr)}</span><span class="en">${e(v.kEn)}</span></span>
@@ -79,6 +80,25 @@ const ARCHIVE = archive.map(g => `
     <a href="${e(i.u)}" target="_blank" rel="noopener"><span class="y">${e(i.y)}</span>
     <span><span class="ar">${e(i.ar)}</span><span class="en">${e(i.en)}</span></span></a>`).join("")}</div>
 </details>`).join("");
+
+const nDoc = videos.filter(v => kindOf(v) === "doc").length;
+const nExp = videos.length - nDoc;
+const VFILTER = nDoc && nExp ? `<div class="vfilter" role="group">
+  <button type="button" data-f="all" aria-pressed="true"><span class="ar">الكل</span><span class="en">All</span> <i>${videos.length}</i></button>
+  <button type="button" data-f="doc" aria-pressed="false"><span class="ar">أفلام وثائقية</span><span class="en">Documentaries</span> <i>${nDoc}</i></button>
+  <button type="button" data-f="explainer" aria-pressed="false"><span class="ar">فيديوهات شرح</span><span class="en">Explainers</span> <i>${nExp}</i></button>
+</div>` : "";
+
+// ───────── روابط التواصل الإضافية (تظهر حين تُملأ) ─────────
+const LINKS = [
+  ["linkedin", "LinkedIn", "LinkedIn"],
+  ["whatsapp", "واتساب", "WhatsApp"],
+].filter(([k]) => String(site[k] || "").trim()).map(([k, ar, en]) => {
+  let u = String(site[k]).trim();
+  if (k === "whatsapp" && !/^https?:/.test(u)) u = "https://wa.me/" + u.replace(/\D/g, "");
+  return `<div class="cbox"><p class="clabel"><span class="ar">${ar}</span><span class="en">${en}</span></p>
+      <a href="${e(u)}" target="_blank" rel="noopener">${k === "whatsapp" ? `<span dir="ltr">${e(site[k])}</span>` : e(en)}</a></div>`;
+}).join("");
 
 // ───────── الخدمات ─────────
 const SERVICES = services.map((s, i) => `
@@ -214,7 +234,9 @@ const slots = {
   CV_URL: e(site.cvUrl), YEAR: e(site.year),
   ACCENT: pal.a, ACCENT_SOFT: pal.s, ACCENT_HEX: pal.a.replace("#", ""),
   FONT_LINK, FONT_FAMILY, THEME_BLOCK, GRID_CLASS, HERO,
-  VIDEOS, WRITING, ARCHIVE, SERVICES, PROJECT,
+  VIDEOS, WRITING, ARCHIVE, SERVICES, PROJECT, VFILTER, LINKS,
+  VMORE: videos.length > 7 ? `<div class="vmore"><button type="button" class="btn ghost" id="vmore"><span class="ar">كل الأعمال المرئية (${videos.length})</span><span class="en">All video work (${videos.length})</span></button></div>` : "",
+  OG_IMAGE: e(site.ogImage || "/media/og.png"),
   CTA_AR: e(site.ctaAr || "تواصل معي"), CTA_EN: e(site.ctaEn || "Get in touch"),
   CONTACT_AR: e(site.contactAr), CONTACT_EN: e(site.contactEn),
 };

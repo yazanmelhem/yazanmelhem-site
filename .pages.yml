@@ -260,6 +260,14 @@ content:
       - name: authorUrl
         label: رابط صفحة الكاتب في حبر
         type: string
+      - name: linkedin
+        label: رابط LinkedIn
+        type: string
+        description: "اختياري. يظهر في قسم التواصل حين يُملأ."
+      - name: whatsapp
+        label: رقم واتساب
+        type: string
+        description: "اختياري، بالصيغة الدولية مثل +962 7X XXX XXXX. يظهر في قسم التواصل حين يُملأ."
       - name: cvUrl
         label: رابط السيرة الذاتية
         type: string
