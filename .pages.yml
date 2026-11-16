@@ -238,6 +238,13 @@ content:
       - name: role2En
         label: السطر الثاني من الصفة بالإنجليزية
         type: string
+      - name: descAr
+        label: وصف الصفحة لمحركات البحث بالعربية
+        type: text
+        description: "جملة أو جملتان، حتى 160 حرفًا تقريبًا. تظهر في نتائج غوغل وعند مشاركة الرابط."
+      - name: descEn
+        label: وصف الصفحة لمحركات البحث بالإنجليزية
+        type: text
       - name: bioAr
         label: النبذة بالعربية
         type: text

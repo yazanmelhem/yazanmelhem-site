@@ -1,12 +1,12 @@
 {
   "nameAr": "يزن ملحم",
   "nameEn": "Yazan Melhem",
-  "roleAr": "منتج ميداني ووثائقي",
-  "roleEn": "Fixer & documentary producer",
+  "roleAr": "صحافي ومنتج أفلام وثائقية",
+  "roleEn": "Journalist & documentary producer",
   "bioAr": "صحافي ومنتج يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
-  "bioEn": "A journalist and producer working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a fixer and documentary producer, and as a researcher-writer for podcast, television and academic projects.",
-  "ctaAr": "تواصل معي",
-  "ctaEn": "Get in touch",
+  "bioEn": "A journalist and producer working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a field and documentary producer, and as a researcher-writer for podcast, television and academic projects.",
+  "ctaAr": "تواصل",
+  "ctaEn": "Contact",
   "clientsAr": [
     "مجلة حبر",
     "صوت",
@@ -23,8 +23,8 @@
     "University of East Anglia",
     "Jordan University of Science and Technology"
   ],
-  "contactAr": "تعمل على مشروع في الأردن؟ راسلني وأخبرني عنه.",
-  "contactEn": "Working on a project in Jordan? Write to me and tell me about it.",
+  "contactAr": "للتعاون، أو للسؤال عن أيٍّ من الأعمال.",
+  "contactEn": "For collaborations, or questions about any of the work.",
   "videoNoteAr": "من إعدادي: الفكرة والبحث والمقابلات وإدارة التصوير وبناء المعالجة.",
   "videoNoteEn": "Produced by me: idea, research, interviews, directing the shoot and shaping the cut.",
   "project": {
@@ -47,13 +47,15 @@
   "whatsapp": "",
   "cvUrl": "/media/cv-yazan-melhem.pdf",
   "year": "2026",
-  "portrait": "/media/portrait.jpg",
-  "heroImage": "/media/hero-camel-herder.jpg",
+  "portrait": "/media/portrait.webp",
+  "heroImage": "/media/hero-camel-herder.webp",
   "design": {
     "font": "IBM Plex Sans Arabic"
   },
-  "role2Ar": "باحث وكاتب، من عمّان",
-  "role2En": "Researcher & writer, based in Amman",
+  "role2Ar": "عمّان، الأردن",
+  "role2En": "Amman, Jordan",
   "heroCaptionAr": "من فيلم «رعي الإبل في البادية»، حبر، 2022",
-  "heroCaptionEn": "From \"Camel Herding in the Badia\", 7iber, 2022"
+  "heroCaptionEn": "From \"Camel Herding in the Badia\", 7iber, 2022",
+  "descAr": "صحافي ومنتج أفلام وثائقية من عمّان. أفلام وثائقية قصيرة وفيديوهات شرح وتقارير بحثية عن الأردن، وأعمال بحثية للبودكاست والتلفزيون.",
+  "descEn": "Journalist and documentary producer based in Amman, Jordan. Short documentaries, explainers and research reporting, plus research and writing for podcast and television."
 }
