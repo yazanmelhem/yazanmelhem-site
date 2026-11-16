@@ -1,9 +1,9 @@
 {
   "nameAr": "يزن ملحم",
   "nameEn": "Yazan Melhem",
-  "roleAr": "فيكسر · منتج أفلام وثائقية · باحث وكاتب",
+  "roleAr": "منتج ميداني ووثائقي · باحث وكاتب",
   "roleEn": "Fixer · Documentary Producer · Researcher & Writer",
-  "bioAr": "يزن ملحم صحافي ومنتج مقيم في عمّان، يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، فيكسرًا ومنتجًا للأفلام الوثائقية، وباحثًا وكاتبًا لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
+  "bioAr": "يزن ملحم صحافي ومنتج مقيم في عمّان، يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
   "bioEn": "Yazan Melhem is a journalist and producer based in Amman, working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a fixer, documentary producer, and researcher-writer for podcast, television and academic projects.",
   "metaAr": [
     "عمّان، الأردن",
@@ -17,8 +17,22 @@
   ],
   "ctaAr": "تواصل معي",
   "ctaEn": "Get in touch",
-  "clientsAr": ["مجلة حبر", "صوت", "قناة رؤيا", "فوق السادة", "جامعة إيست أنغليا", "جامعة العلوم والتكنولوجيا الأردنية"],
-  "clientsEn": ["7iber", "Sowt", "Roya TV", "Fawq Al-Sada", "University of East Anglia", "Jordan University of Science and Technology"],
+  "clientsAr": [
+    "مجلة حبر",
+    "صوت",
+    "قناة رؤيا",
+    "فوق السادة",
+    "جامعة إيست أنغليا",
+    "جامعة العلوم والتكنولوجيا الأردنية"
+  ],
+  "clientsEn": [
+    "7iber",
+    "Sowt",
+    "Roya TV",
+    "Fawq Al-Sada",
+    "University of East Anglia",
+    "Jordan University of Science and Technology"
+  ],
   "contactAr": "تعمل على مشروع في الأردن؟ راسلني وأخبرني عنه.",
   "contactEn": "Working on a project in Jordan? Write to me and tell me about it.",
   "videoNoteAr": "يشمل دوري في هذه الأعمال تطوير الفكرة، البحث، المقابلات، إدارة التصوير الميداني، وبناء المعالجة النهائية.",
