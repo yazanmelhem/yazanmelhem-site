@@ -3,8 +3,8 @@
   "nameEn": "Yazan Melhem",
   "roleAr": "صحافي ومنتج أفلام وثائقية",
   "roleEn": "Journalist & documentary producer",
-  "bioAr": "صحافي ومنتج يعمل منذ 2018 في الصحافة المرئية والبحث. يتعاون مع المؤسسات الإعلامية والبحثية والصحافيين، العرب والأجانب، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة لمشاريع البودكاست والتلفزيون والبحث الأكاديمي.",
-  "bioEn": "A journalist and producer working in video journalism and research since 2018. He works with Arab and international media outlets, research institutions and independent journalists as a field and documentary producer, and as a researcher-writer for podcast, television and academic projects.",
+  "bioAr": "صحافي وباحث يعمل منذ 2018 على السياسات العامة والتنمية والاقتصادات الهامشية، وعلى التراث المحلي في الأردن: عاداته ومِهَنه وموسيقاه. تُوثّق أعماله ممارسات ومِهَنًا شارفت على الاندثار، وتقرأ الحدث في سياقه التاريخي والاجتماعي، في صيغتَي الفيلم الوثائقي القصير وفيديو الشرح. ويتعاون مع مؤسسات إعلامية وبحثية ومع صحافيين، من الأردن وخارجه، في الإنتاج الميداني والوثائقي، وفي البحث والكتابة للبودكاست والتلفزيون والمشاريع الأكاديمية.",
+  "bioEn": "A journalist and researcher who has worked since 2018 on public policy, development and marginal economies, and on Jordan's local heritage: its customs, trades and music. His work documents practices and trades that have come close to disappearing, and reads the event in its historical and social context, in two forms: the short documentary and the explainer video. He works with media and research institutions and with journalists, in Jordan and abroad, on field and documentary production, and on research and writing for podcasts, television and academic projects.",
   "ctaAr": "تواصل",
   "ctaEn": "Contact",
   "clientsAr": [
@@ -23,10 +23,10 @@
     "University of East Anglia",
     "Jordan University of Science and Technology"
   ],
-  "contactAr": "للتعاون، أو للسؤال عن أيٍّ من الأعمال.",
-  "contactEn": "For collaborations, or questions about any of the work.",
-  "videoNoteAr": "من إعدادي: الفكرة والبحث والمقابلات وإدارة التصوير وبناء المعالجة.",
-  "videoNoteEn": "Produced by me: idea, research, interviews, directing the shoot and shaping the cut.",
+  "contactAr": "للتعاون، أو للاستفسار عن أي عمل منشور.",
+  "contactEn": "For collaboration, or for questions about any published work.",
+  "videoNoteAr": "في الأفلام: الفكرة والبحث والمقابلات وإدارة التصوير، وبناء المعالجة مع المونتير. في فيديوهات الشرح: الإعداد والتسجيل الصوتي.",
+  "videoNoteEn": "Films: idea, research, interviews, directing the shoot, shaping the cut with the editor. Explainers: preparation and voice-over.",
   "project": {
     "titleAr": "إخلاء البترا",
     "titleEn": "Evicting Petra",
@@ -36,8 +36,8 @@
     "creditsEn": "Yazan Melhem and Mohammad Nabulsiyeh",
     "grantAr": "حاصل على منحة تطوير من مهرجان عمّان السينمائي",
     "grantEn": "Supported by a development grant from the Amman Film Festival",
-    "textAr": "يتتبّع واقع مجتمع البدول، سكان البترا الأصليين، اليوم، بعد أربعين عامًا على ترحيلهم من البترا وإعادة توطينهم في قرية أم صيحون، وأثرَ محاولات إخلائهم المستمرة من محيط الموقع الأثري على حياتهم ومجتمعهم، الذي خسر بسبب موقعه أكثر بكثير مما كان يمكن أن يكسب.",
-    "textEn": "Follows the Bdoul, Petra's original inhabitants, forty years after they were moved out of Petra and resettled in the village of Umm Sayhoun, and traces how ongoing attempts to clear them from around the archaeological site have shaped their lives and their community, which has lost far more to its location than it could ever have gained.",
+    "textAr": "يتتبّع واقع مجتمع البدول، سكان البترا الأصليين، اليوم، بعد أربعين عامًا على ترحيلهم من البترا وإعادة توطينهم في قرية أم صيحون، وأثر محاولات إخلائهم المستمرة من محيط الموقع الأثري على حياتهم ومجتمعهم، الذي خسر بسبب موقعه أكثر بكثير مما كان يمكن أن يكسب.",
+    "textEn": "Follows the Bdoul, Petra's original inhabitants, forty years after they were removed from Petra and resettled in the village of Umm Sayhoun. It looks at how the continuing attempts to clear them from around the archaeological site have affected their lives and their community, which lost far more because of its location than it could have gained.",
     "trailer": "https://drive.google.com/file/d/1I7BCJIDjgr0IRK_qpkKHISA0BwX_aQlt/view",
     "image": ""
   },
@@ -56,6 +56,6 @@
   "role2En": "Amman, Jordan",
   "heroCaptionAr": "من فيلم «رعي الإبل في البادية»، حبر، 2022",
   "heroCaptionEn": "From \"Camel Herding in the Badia\", 7iber, 2022",
-  "descAr": "صحافي ومنتج أفلام وثائقية من عمّان. أفلام وثائقية قصيرة وفيديوهات شرح وتقارير بحثية عن الأردن، وأعمال بحثية للبودكاست والتلفزيون.",
-  "descEn": "Journalist and documentary producer based in Amman, Jordan. Short documentaries, explainers and research reporting, plus research and writing for podcast and television."
+  "descAr": "صحافي ومنتج أفلام وثائقية من عمّان. أفلام وثائقية قصيرة وفيديوهات شرح وتقارير بحثية عن الأردن، وبحث وكتابة للبودكاست والتلفزيون.",
+  "descEn": "Journalist and documentary producer in Amman, Jordan. Short documentaries, explainers and research reports on Jordan, and research and writing for podcasts and television."
 }
